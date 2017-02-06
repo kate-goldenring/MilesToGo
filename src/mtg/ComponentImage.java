@@ -6,6 +6,7 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.event.WindowAdapter;
 import java.awt.image.BufferedImage;
+import java.beans.PropertyChangeEvent;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
@@ -15,7 +16,7 @@ import java.util.Observer;
 import javax.imageio.ImageIO;
 
 
-public class ComponentImage extends Component {//observer of FileEditor
+public class ComponentImage extends Component  {//observer of FileEditor
 	private BufferedImage mtn;
 	private BufferedImage rr;
 	private BufferedImage startImage;
@@ -113,6 +114,14 @@ public class ComponentImage extends Component {//observer of FileEditor
 			g.drawImage(endImage, mtn.getWidth()/2-100, mtn.getHeight()/2-100, 200, 180, null, null);
 		}
 		}
+	
+	public void propertyChange(PropertyChangeEvent evt){
+		System.out.println("prop change meth called");
+		repaint();
+	}
+	 public void compImgUpdate(){
+		 System.out.println("I am updating");
+	 }
 
 
 

@@ -15,8 +15,11 @@ public class FileEditor extends java.util.Observable{//Observable by component i
 	private double miles;
 	public FileEditor(){
 		sumMiles();
-//		System.out.println("miles in fe constructor set as: " + miles);
+
 	}
+	
+	//add component image as observer
+
 	@SuppressWarnings("finally")
 	public void sumMiles(){
 
@@ -39,22 +42,16 @@ public class FileEditor extends java.util.Observable{//Observable by component i
 				}
 			}   
 
-			//close file
 			bufferedReader.close(); 
 			this.miles = sum;
-//			System.out.println("new sum is:" + sum);
-//			System.out.println("fe miles are: " + getMiles());
-
 
 
 		}
 		catch(FileNotFoundException ex) {
-//			System.out.println(
-//					"Unable to open file");                
+              
 		}
 		catch(IOException ex) {
-//			System.out.println(
-//					"Error reading file");                  
+           
 
 		}
 		setChanged();
@@ -94,8 +91,7 @@ public class FileEditor extends java.util.Observable{//Observable by component i
 			notifyObservers();
 
 		}catch (FileNotFoundException e) {
-//			System.out.println(
-//					"Unable to open file"); 
+
 		}
 
 

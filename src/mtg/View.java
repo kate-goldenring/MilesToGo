@@ -14,7 +14,8 @@ public class View extends JPanel {
 	private double miles;
 
 	public View(ComponentImage ci, FileEditor fe){
-//		ci = new ComponentImage(fe.getMiles());
+		//		ci = new ComponentImage(fe.getMiles());
+		ci.compImgUpdate();
 		this.fe = fe;
 		setLayout(new BorderLayout());
 		add(ci, BorderLayout.CENTER);
@@ -24,21 +25,21 @@ public class View extends JPanel {
 		RestartWidget restart_widget = new RestartWidget(fe);
 		buttons.add(restart_widget);
 		add(buttons, BorderLayout.SOUTH);
-
+		
 
 	}
 
 
-//	@Override
-//	public void update(Observable o, Object arg) {
-//		System.out.println("update called");
-//		miles = fe.getMiles();
-//		ci.getImage().flush();
-//		ci = new ComponentImage(miles);
-//	
-////		ci.setMiles(miles);
-//	
-//
-//	}
+	//	@Override
+	//	public void update(Observable o, Object arg) {
+	//		System.out.println("update called");
+	//		miles = fe.getMiles();
+	//		ci.getImage().flush();
+	//		ci = new ComponentImage(miles);
+	//	
+	////		ci.setMiles(miles);
+	//	
+	//
+	//	}
 
 }
