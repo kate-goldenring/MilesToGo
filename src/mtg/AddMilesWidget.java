@@ -57,9 +57,11 @@ public class AddMilesWidget extends JPanel implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		Double miles_to_add = Double.parseDouble(milesToday.getText());
+		//print miles to file editor 
 		fe.addMiles(miles_to_add);
 		milesToday.setText("");
 
+		/* below is a part of restarting app
 		try {
 			restartApplication();
 //			System.out.println("entered tryblock");
@@ -67,24 +69,20 @@ public class AddMilesWidget extends JPanel implements ActionListener{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		 */
 	}
-	//		try {
-	//			   Runtime.getRuntime().exec("java -jar mtg.Main.jar");
-	//			   System.exit(0);
-	//			} catch (IOException e) {
-	//			}
-	//		
-	//	}
+
+	/* restarts program to update component image
 	public void restartApplication() throws URISyntaxException, IOException
 	{
 		final String javaBin = System.getProperty("java.home") + File.separator + "bin" + File.separator + "java";
 		final File currentJar = new File(Main.class.getProtectionDomain().getCodeSource().getLocation().toURI());
 
-		/* is it a jar file? */
+		/// is it a jar file? 
 		if(!currentJar.getName().endsWith(".jar"))
 			return;
 
-		/* Build command: java -jar application.jar */
+		///Build command: java -jar application.jar
 		final ArrayList<String> command = new ArrayList<String>();
 		command.add(javaBin);
 		command.add("-jar");
@@ -94,4 +92,5 @@ public class AddMilesWidget extends JPanel implements ActionListener{
 		builder.start();
 		System.exit(0);
 	}
+	 */
 }
