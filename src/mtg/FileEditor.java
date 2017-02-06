@@ -38,7 +38,9 @@ public class FileEditor extends java.util.Observable{//Observable by component i
 			while((line = bufferedReader.readLine()) != null) {
 				String[] words = line.split(" ");
 				for(String s: words){
+					
 					sum += Double.parseDouble(s);
+					
 				}
 			}   
 
@@ -84,7 +86,8 @@ public class FileEditor extends java.util.Observable{//Observable by component i
 			PrintWriter writer = new PrintWriter("image/miles.txt");
 
 			writer.print("");
-			writer.print("0");
+			writer.println("0");
+			
 			writer.close();
 			sumMiles();
 
