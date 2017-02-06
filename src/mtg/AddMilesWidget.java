@@ -20,10 +20,12 @@ import javax.swing.JTextField;
 
 
 public class AddMilesWidget extends JPanel implements ActionListener{
-	private int miles;
+	
 	private JTextField milesToday;
 	private JButton add_miles_button;
 	private FileEditor fe;
+	private JLabel totalMiles;
+	private MileCounterWidget mcw;
 
 	public AddMilesWidget(FileEditor fe){
 		this.fe = fe;
@@ -37,20 +39,8 @@ public class AddMilesWidget extends JPanel implements ActionListener{
 		add(add_miles_button);
 
 		add_miles_button.addActionListener(this);
-		if(fe.getMiles()<1){
-			JLabel totalMiles = new JLabel("Can you outrun coyote by running 365 miles in 365 days?");
-			add(totalMiles);
-		}else if(fe.getMiles()<365){
-			JLabel totalMiles = new JLabel("Miles to Go: " + Double.toString(365-fe.getMiles()));
-			add(totalMiles);
-		}else{// ran more than 365
-			JLabel totalMiles = new JLabel("You outran coyote at " + Double.toString(fe.getMiles()) +" miles! Reset to start over!");
-			add(totalMiles);
 		}
 
-
-
-	}
 
 
 
@@ -60,37 +50,8 @@ public class AddMilesWidget extends JPanel implements ActionListener{
 		//print miles to file editor 
 		fe.addMiles(miles_to_add);
 		milesToday.setText("");
-
-		/* below is a part of restarting app
-		try {
-			restartApplication();
-//			System.out.println("entered tryblock");
-		} catch (URISyntaxException | IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		 */
+		
+	
 	}
 
-	/* restarts program to update component image
-	public void restartApplication() throws URISyntaxException, IOException
-	{
-		final String javaBin = System.getProperty("java.home") + File.separator + "bin" + File.separator + "java";
-		final File currentJar = new File(Main.class.getProtectionDomain().getCodeSource().getLocation().toURI());
-
-		/// is it a jar file? 
-		if(!currentJar.getName().endsWith(".jar"))
-			return;
-
-		///Build command: java -jar application.jar
-		final ArrayList<String> command = new ArrayList<String>();
-		command.add(javaBin);
-		command.add("-jar");
-		command.add(currentJar.getPath());
-//		System.out.println(currentJar.getPath());
-		final ProcessBuilder builder = new ProcessBuilder(command);
-		builder.start();
-		System.exit(0);
-	}
-	 */
 }

@@ -13,9 +13,7 @@ public class RestartWidget extends JPanel implements ActionListener{
 		JButton restart = new JButton("Reset Miles Run to 0");
 		restart.setActionCommand("restart");
 		add(restart);
-		restart.addActionListener(this);
-		
-		
+		restart.addActionListener(this);	
 		
 	}
 	

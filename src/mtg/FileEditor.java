@@ -61,7 +61,6 @@ public class FileEditor extends java.util.Observable{//Observable by component i
 	}
 
 	public void addMiles(double miles_to_add){
-//		System.out.println("entered add miles method");
 		if(miles_to_add<365 || miles_to_add>0){
 			try(FileWriter fw = new FileWriter("image/miles.txt", true);
 					BufferedWriter bw = new BufferedWriter(fw);
@@ -87,8 +86,7 @@ public class FileEditor extends java.util.Observable{//Observable by component i
 			writer.print("");
 			writer.print("0");
 			writer.close();
-			setChanged();
-			notifyObservers();
+			sumMiles();
 
 		}catch (FileNotFoundException e) {
 

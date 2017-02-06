@@ -101,7 +101,6 @@ public class ComponentImage extends Component  {//observer of FileEditor
 	public void paint(Graphics g) {
 
 		g.drawImage(mtn, 0, 0, null);
-		//		System.out.println("painting new bird");
 		if(miles<1){
 			g.drawImage(startImage, ((int)(miles*1.213))+ 1, mtn.getHeight()-120-((int)(miles*.34)), 50, 70, null, null);
 		}else if(miles< 270){
@@ -115,13 +114,9 @@ public class ComponentImage extends Component  {//observer of FileEditor
 		}
 	}
 
-	//	public void propertyChange(PropertyChangeEvent evt){
-	//		System.out.println("prop change meth called");
-	//		repaint();
-	//	}
+
 	public void compImgUpdate(double miles){
 		this.miles = miles;
-		repaint();
 		System.out.println("I am updating");
 	
 	}

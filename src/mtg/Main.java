@@ -18,8 +18,8 @@ public class Main {
 		FileEditor fe = new FileEditor();
 
 		View view = new View(new ComponentImage(fe.getMiles()), fe);
-		Controller controller = new Controller(fe, view);
 		f.add(view);
+	
 		f.pack();
 		f.setVisible(true);
 
