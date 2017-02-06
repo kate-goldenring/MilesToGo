@@ -15,7 +15,7 @@ public class View extends JPanel {
 
 	public View(ComponentImage ci, FileEditor fe){
 		//		ci = new ComponentImage(fe.getMiles());
-		ci.compImgUpdate();
+		ci.compImgUpdate(fe.getMiles());
 		this.fe = fe;
 		setLayout(new BorderLayout());
 		add(ci, BorderLayout.CENTER);

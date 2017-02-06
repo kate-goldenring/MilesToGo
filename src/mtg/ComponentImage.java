@@ -24,48 +24,48 @@ public class ComponentImage extends Component  {//observer of FileEditor
 	private double miles;
 
 	public ComponentImage(double miles){
-		
+
 		this.miles = miles;
 		try {
 			mtn = ImageIO.read(new File("image/mtfuji.jpg"));
 
 		} catch (IOException e) {
 		}
-		
-//		try {
-//			mtn = ImageIO.read(new URL("http://onshirin.jp/en/introduction/images/image_07.jpg"));
-//
-//		} catch (IOException e) {
-//		}
-		
+
+		//		try {
+		//			mtn = ImageIO.read(new URL("http://onshirin.jp/en/introduction/images/image_07.jpg"));
+		//
+		//		} catch (IOException e) {
+		//		}
+
 		try {
 			rr = ImageIO.read(new File("image/rr2.png"));
 
 		} catch (IOException e) {
 		}
-		
-//		try {
-//			rr = ImageIO.read(new URL("http://webcreationsbyjumpy.com/comics/comics_graphics/roadrunner/images/runner022.png"));
-//
-//		} catch (IOException e) {
-//		}
-		
-//		try {
-//			startImage = ImageIO.read(new URL("http://webcreationsbyjumpy.com/comics/comics_graphics/roadrunner/images/runner020.png"));
-//
-//		} catch (IOException e) {
-//		}
+
+		//		try {
+		//			rr = ImageIO.read(new URL("http://webcreationsbyjumpy.com/comics/comics_graphics/roadrunner/images/runner022.png"));
+		//
+		//		} catch (IOException e) {
+		//		}
+
+		//		try {
+		//			startImage = ImageIO.read(new URL("http://webcreationsbyjumpy.com/comics/comics_graphics/roadrunner/images/runner020.png"));
+		//
+		//		} catch (IOException e) {
+		//		}
 		try {
 			startImage = ImageIO.read(new File("image/candr.png"));
 
 		} catch (IOException e) {
 		}
-		
-//		try {
-//			endImage = ImageIO.read(new URL("http://i.ebayimg.com/images/g/K-sAAOxyOalTbmhu/s-l400.jpg"));
-//
-//		} catch (IOException e) {
-//		}
+
+		//		try {
+		//			endImage = ImageIO.read(new URL("http://i.ebayimg.com/images/g/K-sAAOxyOalTbmhu/s-l400.jpg"));
+		//
+		//		} catch (IOException e) {
+		//		}
 		try {
 			endImage = ImageIO.read(new File("image/end.jpg"));
 
@@ -82,7 +82,7 @@ public class ComponentImage extends Component  {//observer of FileEditor
 
 
 	public Dimension getPreferredSize() {
-		
+
 		if (mtn == null) {
 			return new Dimension(100,100);
 		} else {
@@ -95,17 +95,17 @@ public class ComponentImage extends Component  {//observer of FileEditor
 	}
 	public void setMiles(double miles){
 		this.miles = miles;
-//		System.out.println("miles set as in component: " + miles);
+		//		System.out.println("miles set as in component: " + miles);
 	}
 
 	public void paint(Graphics g) {
 
 		g.drawImage(mtn, 0, 0, null);
-//		System.out.println("painting new bird");
+		//		System.out.println("painting new bird");
 		if(miles<1){
 			g.drawImage(startImage, ((int)(miles*1.213))+ 1, mtn.getHeight()-120-((int)(miles*.34)), 50, 70, null, null);
 		}else if(miles< 270){
-		g.drawImage(rr, ((int)(miles*1.213))+ 1, mtn.getHeight()-120-((int)(miles*.34)), 50, 70, null, null);
+			g.drawImage(rr, ((int)(miles*1.213))+ 1, mtn.getHeight()-120-((int)(miles*.34)), 50, 70, null, null);
 		}else if(miles< 325){
 			g.drawImage(rr, ((int)(miles*1.213))+ 1, mtn.getHeight()-120-((int)(miles*.38)), 50, 70, null, null);
 		}else if(miles < 365){
@@ -113,15 +113,18 @@ public class ComponentImage extends Component  {//observer of FileEditor
 		}else{
 			g.drawImage(endImage, mtn.getWidth()/2-100, mtn.getHeight()/2-100, 200, 180, null, null);
 		}
-		}
-	
-	public void propertyChange(PropertyChangeEvent evt){
-		System.out.println("prop change meth called");
-		repaint();
 	}
-	 public void compImgUpdate(){
-		 System.out.println("I am updating");
-	 }
+
+	//	public void propertyChange(PropertyChangeEvent evt){
+	//		System.out.println("prop change meth called");
+	//		repaint();
+	//	}
+	public void compImgUpdate(double miles){
+		this.miles = miles;
+		repaint();
+		System.out.println("I am updating");
+	
+	}
 
 
 

@@ -14,7 +14,6 @@ Controller(FileEditor fe, View view){
 }
 	@Override
 	public void update(Observable o, Object arg) {
-		
 		view = new View(new ComponentImage(fe.getMiles()), fe);
 		
 	}
