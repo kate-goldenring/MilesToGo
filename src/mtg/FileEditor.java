@@ -29,7 +29,7 @@ public class FileEditor extends java.util.Observable{//Observable by component i
 		try {
 
 			FileReader fileReader = 
-					new FileReader("image/miles.txt");
+					new FileReader("./miles.txt");
 
 			//wraping FileReader in BufferedReader for efficiency
 			BufferedReader bufferedReader = 
@@ -64,7 +64,7 @@ public class FileEditor extends java.util.Observable{//Observable by component i
 
 	public void addMiles(double miles_to_add){
 		if(miles_to_add<365 || miles_to_add>0){
-			try(FileWriter fw = new FileWriter("image/miles.txt", true);
+			try(FileWriter fw = new FileWriter("./miles.txt", true);
 					BufferedWriter bw = new BufferedWriter(fw);
 					PrintWriter out = new PrintWriter(bw))
 			{
@@ -83,7 +83,7 @@ public class FileEditor extends java.util.Observable{//Observable by component i
 
 	public void resetMiles(){
 		try{
-			PrintWriter writer = new PrintWriter("image/miles.txt");
+			PrintWriter writer = new PrintWriter("./miles.txt");
 
 			writer.print("");
 			writer.println("0");

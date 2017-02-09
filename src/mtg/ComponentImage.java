@@ -27,7 +27,7 @@ public class ComponentImage extends Component  {//observer of FileEditor
 
 		this.miles = miles;
 		try {
-			mtn = ImageIO.read(new File("image/mtfuji.jpg"));
+			mtn = ImageIO.read(ComponentImage.class.getResource("image/mtfuji.jpg"));
 
 		} catch (IOException e) {
 		}
@@ -117,7 +117,7 @@ public class ComponentImage extends Component  {//observer of FileEditor
 
 	public void compImgUpdate(double miles){
 		this.miles = miles;
-		System.out.println("I am updating");
+		
 	
 	}
 
